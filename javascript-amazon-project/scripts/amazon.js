@@ -1,5 +1,6 @@
+// Add products in html using js
 let productsHTML = '';
-
+// products is a variable name oof an array from data/products.js
 products.forEach((product)=>{
     productsHTML += `
         <div class="product-container">
@@ -57,11 +58,13 @@ products.forEach((product)=>{
 document.querySelector('.js-products-grid').
 innerHTML = productsHTML;
 
+// Add to cart button interactive
 document.querySelectorAll('.js-add-to-cart')
     .forEach((button)=>{
         button.addEventListener('click',()=>{
             const productId = button.dataset.productId;
             let matchingItem;
+            // cart is variable name of an array from data/cart.js
             cart.forEach((items)=>{
                 if(productId === items.productId){
                     matchingItem = items;
@@ -77,9 +80,15 @@ document.querySelectorAll('.js-add-to-cart')
                     quantity: 1
                     });
                 }
+
+            let cartQuantity = 0;
+
+            cart.forEach((item) => {
+                cartQuantity += item.quantity;
+            });
             
-            
-            console.log(cart);
+            document.querySelector('.js-cart-quantity')
+            .innerHTML = cartQuantity;
         });
     });
 
