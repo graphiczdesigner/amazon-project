@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>10g Exercise</title>
+	<style>
+		.mlt-btn{
+			font-size: 17px;
+			padding: 10px 15px;
+			border: none;
+			font-weight: bold;
+			border-radius: 4px;
+			/*background-color: lightgray;*/
+			cursor: pointer;
+		}
+
+		.clicked{
+			background-color: #000;
+			color: #fff;
+		}
+		
+	</style>
+</head>
+<body>
+	<button 
+	class="mlt-btn game-js"
+    onclick="gametoggle('.game-js');" 
+	>Gaming</button>
+
+	<button 
+	class="mlt-btn music-js"
+    onclick="gametoggle('.music-js');" 
+	>Music</button>
+
+	<button 
+	class="mlt-btn tech-js"
+    onclick="gametoggle('.tech-js');" 
+	>Tech</button>
+
+	<script>
+		function gametoggle(classBtn){
+		  let game = document.querySelector(classBtn);
+			if(!game.classList.contains('clicked')){
+				turnOffBtns();
+				game.classList.add('clicked');
+			}else{
+				game.classList.remove('clicked')
+			}
+		}
+
+		function turnOffBtns(){
+			let clickBtn = document.querySelector('.clicked');
+			if(clickBtn){
+				clickBtn.classList.remove('clicked');
+			}
+		}
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>10d Exercise</title>
+	<style>
+		.game-btn{
+			font-size: 17px;
+			padding: 10px 15px;
+			border: none;
+			font-weight: bold;
+			border-radius: 4px;
+			/*background-color: lightgray;*/
+			cursor: pointer;
+		}
+
+		.clicked{
+			background-color: #000;
+			color: #fff;
+		}
+		
+	</style>
+</head>
+<body>
+	<button 
+	class="game-btn game-js"
+    onclick="gametoggle();" 
+	>Gaming</button>
+
+	<script>
+		function gametoggle(){
+			let game = document.querySelector('.game-js');
+			if(!game.classList.contains('clicked')){
+				game.classList.add('clicked');
+			}else{
+				game.classList.remove('clicked')
+			}
+		}
+		
+	</script>
+</body>
+</html>

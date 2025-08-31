@@ -1,0 +1,132 @@
+* {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.input-grid,
+.display-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 15px;
+  align-items: center;
+}
+
+.input-grid {
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name-input,
+.due-date-input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.name-input:focus,
+.due-date-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.add-input-btn,
+.remove-btn {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-input-btn {
+  background-color: #2ecc71;
+}
+
+.add-input-btn:hover {
+  background-color: #27ae60;
+  transform: translateY(-1px);
+}
+
+.display-grid {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item {
+  display: contents;
+}
+
+.todo-item > div {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.todo-item:last-child > div {
+  border-bottom: none;
+}
+
+.todo-name {
+  font-weight: 500;
+}
+
+.todo-date {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.remove-btn {
+  background-color: #e74c3c;
+  padding: 8px 12px;
+}
+
+.remove-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .input-grid,
+  .display-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-grid {
+    padding: 15px;
+  }
+  
+  .add-input-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+body{
+            background-color: #191919;
+            color: #fff;
+            font-family: Arial;
+        }
+
+        .title{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .icons{
+            /*padding: 40px;*/
+            height: 120px;
+            width: 120px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-color: #fff;
+            margin: 0px 5px;
+            cursor: pointer;
+
+        }
+
+        .icons i,
+        p i{
+            font-size: 40px;
+            color: orange;
+        }
+
+        .result{
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        .score{
+            margin-top: 60px;
+        }
+
+        .reset-btn,
+        .autoplay-btn{
+            background-color: #fff;
+            border: none;
+            padding: 7px 15px;
+            cursor: pointer;
+            font-size: 15px;
+        }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10i Exercise</title>
+    <style> 
+
+      body{
+         background-color: #000;
+         font-family: Arial;
+      }
+
+      .displayCalculation{
+        color: #fff;
+        font-size: 45px;
+        margin: 15px 0 5px 0;
+        
+      }
+
+      .gray-btn{
+        background-color: #333;
+        color: #fff;
+      }
+
+      .orange-btn{
+        background-color: #fea00a;
+        color: #fff;
+      }
+
+      .btns{
+        font-size: 26px;
+        height: 60px;
+        width: 60px;
+        border: none;
+        border-radius: 50%;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+
+      .clear-btn{
+        font-size: 17px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p class="displayCalculation"></p>
+
+    <p>
+      <button class="gray-btn btns" onclick="updateCalculation('1');">1</button>
+      <button class="gray-btn btns" onclick="updateCalculation('2');">2</button>
+      <button class="gray-btn btns" onclick="updateCalculation('3');">3</button>
+      <button class="orange-btn btns" onclick="updateCalculation(' + ');">+</button>
+    </p>
+
+    <p>
+      <button class="gray-btn btns" onclick="updateCalculation('4');">4</button>
+      <button class="gray-btn btns" onclick="updateCalculation('5');">5</button>
+      <button class="gray-btn btns" onclick="updateCalculation('6');">6</button>
+      <button class="orange-btn btns" onclick="updateCalculation(' - ');">-</button>
+    </p>
+
+    <p>
+      <button class="gray-btn btns" onclick="updateCalculation('7');">7</button>
+      <button class="gray-btn btns" onclick="updateCalculation('8');">8</button>
+      <button class="gray-btn btns" onclick="updateCalculation('9');">9</button>
+      <button class="orange-btn btns" onclick="updateCalculation(' * ');">*</button>
+    </p>
+
+    <p>
+      <button class="gray-btn btns" onclick="updateCalculation('0');">0</button>
+      <button class="gray-btn btns" onclick="updateCalculation('.');">.</button>
+      <button class="gray-btn btns" onclick="
+        calculation = eval(calculation);
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      ">=</button>
+      <button class="orange-btn btns" onclick="updateCalculation(' / ');">/</button>
+    </p>
+
+    <p>
+      <button class="gray-btn btns clear-btn" onclick="
+        calculation = '';
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      ">Clear</button>
+    </p>
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+      displayCalculation();
+
+      function updateCalculation(getValue) {
+        calculation += getValue;
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      }
+
+      function displayCalculation() {
+        const displayElement = document.querySelector('.displayCalculation');
+        displayElement.innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>

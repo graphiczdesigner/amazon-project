@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>12f Exercise</title>
+</head>
+<body>
+
+	<button class="cart-btn">Add to Cart</button>
+	<p class="temp-text"></p>
+
+	<script>
+		let timeoutId;
+		let btnCart = document.querySelector('.cart-btn');
+		btnCart.addEventListener('click', ()=>{
+			cartBtn();
+		});
+
+		function cartBtn(){
+			let Text = document.querySelector('.temp-text');
+			Text.innerHTML = 'Added';
+
+			clearTimeout(timeoutId);
+			
+			timeoutId = setTimeout(()=>{
+				Text.innerHTML = '';
+			}, 2000);
+		}
+
+		
+	</script>
+
+</body>
+</html>

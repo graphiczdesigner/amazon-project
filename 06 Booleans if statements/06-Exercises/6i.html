@@ -1,0 +1,40 @@
+				<!DOCTYPE html>
+				<html>
+				<head>
+				    <meta charset="utf-8">
+				    <meta name="viewport" content="width=device-width, initial-scale=1">
+				    <title>6i Exercise</title>
+				</head>
+				<body>
+				    <p>Let's say we are trying to guess the result. Create a variable called 'guess' and save your guess ('heads' or 'tails').</p>
+
+				    <ul>
+				    	<li>If your guess matches the result, Display "You win!" in the console.</li>
+				    	<li>If your guess does not matches the result, Display "You lose!" in the console.</li>
+				    </ul>
+
+				    <script>
+
+				    	let anyNum = Math.random();
+				    	let result = '';
+
+
+				    	if(anyNum < 0.5){
+				    		result = 'heads';
+				    	}
+				    	else{
+				    		result = 'tails';
+				    	}
+
+				    	let guess = 'heads';
+
+				    	if (guess === result){
+				    		console.log('You Win!');
+				    	}
+				    	else{
+				    		console.log('You Lose!');
+				    	}
+						
+				    </script>
+				</body>
+				</html>

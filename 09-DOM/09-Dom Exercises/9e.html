@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>9e Exercise</title>
+</head>
+<body>
+	<input type="text" onkeydown="dislayText(event);">
+	<button onclick="dislayName();">Submit</button>
+	<p class="dislayText"></p>
+
+	<script>
+		function dislayName(){
+			let name = document.querySelector('input').value;
+			let dislay = document.querySelector('.dislayText');
+			dislay.innerHTML = `Your name is: ${name}`;
+		}
+
+		function dislayText(event){
+			if(event.key === 'Enter'){
+				dislayName();
+			}
+		}
+		
+	</script>
+
+</body>
+</html>

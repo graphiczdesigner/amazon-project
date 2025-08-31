@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM Projects</title>
+</head>
+<body>
+
+	<!-- 1st project -->
+	<p>YouTube Subscribe Button</p>
+	<button 
+	class="js-subscribe-btn" onclick="subscribe();"
+	>Subscribe</button>
+
+	<!-- 2nd project -->
+	<p>Amazon Shipping Calculator</p>
+	<p>Orders under $40 = +$10 shipping.</p>
+	<p>Orders over $40 = Free shipping.</p>
+	<input class="amount" type="number"
+	 placeholder="Cost of Product" 
+	 onkeydown="displayResultKeyDown(event);">
+	<button onclick="
+        calculateTax();
+
+	">Calculate</button>
+	<p class="totalAmount"></p>
+
+	<script>
+
+		function subscribe(){
+	        const subscribeBtn = document.querySelector('.js-subscribe-btn');
+
+                if(subscribeBtn.innerText === 'Subscribe'){
+                	   subscribeBtn.innerText = 'Subscribed';
+                } else{
+                	subscribeBtn.innerText = 'Subscribe';
+                }
+        }
+
+        // 2nd project
+
+        function calculateTax(){
+
+        let amount = document.querySelector('.amount');
+        let totalAmount = document.querySelector('.totalAmount');
+
+        let cost = Number(amount.value);
+
+        if(cost < 40){
+            cost += 10;
+        }
+
+        totalAmount.innerHTML = `$${cost}`;
+
+    }
+
+    function displayResultKeyDown(event){
+        if(event.key === 'Enter'){
+        	calculateTax();
+        }
+    } 
+
+
+		
+	</script>
+
+</body>
+</html>

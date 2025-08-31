@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>9c Exercise</title>
+</head>
+<body>
+	<button onclick="dislayresult('Head')">Head</button>
+	<button onclick="dislayresult('Tail')">Tail</button>
+	<p class="dislayResult"></p>
+
+	<script>
+		function dislayresult(click){
+			let dislay = document.querySelector('.dislayResult');
+			(click === 'Head')?dislay.innerHTML = 'You click: Head' :
+			dislay.innerHTML = 'You click: Tail';
+		}
+	</script>
+
+</body>
+</html>

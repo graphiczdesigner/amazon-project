@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>9h Exercise</title>
+</head>
+<body>
+	<input type="text" onkeyup="liveDislay();">
+	<p class="dislayHere"></p>
+
+	<script>
+		function liveDislay(){
+			let dislayText = document.querySelector('.dislayHere');
+			let fetchText = document.querySelector('input');
+			dislayText.innerHTML = fetchText.value;
+
+
+		}
+	</script>
+
+</body>
+</html>

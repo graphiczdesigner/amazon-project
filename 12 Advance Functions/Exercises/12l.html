@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>12L Exercise</title>
+</head>
+<body>
+
+	<script>
+		function countPositive(array){
+			let countNum = 0;
+			array.forEach(value =>{
+				if(value >= 0){
+					countNum += 1;
+				}
+			});
+			return countNum;
+		}
+
+		console.log(countPositive([1,-5,4,-6,3,7,9]));
+		console.log(countPositive([1,5,4,6,3,7,9]));
+	</script>
+
+</body>
+</html>

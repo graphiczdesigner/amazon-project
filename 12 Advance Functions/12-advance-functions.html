@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>12 Advance Functions</title>
+</head>
+<body>
+	<button class="js-btn">Click</button>
+
+	<script>
+		/*
+
+		// Functions are values, we can assign them to any variable
+		// Anonymous function
+		const fun1 = function(){
+			console.log(5);
+		};
+		console.log(fun1);
+		// run the function by variable
+		fun1();
+
+		// Use function in object
+		const obj1 = {
+			num: 5,
+			fun: function(value){
+				console.log(value);
+			}
+		};
+
+		obj1.fun('Hello World!');
+
+		
+		// SetTimeout (Run only 1 time) 
+
+		setTimeout(function(){
+			console.log('Hi');
+		}, 3000);
+
+		// SetInterval (Run evey time when this time spend)
+
+		setInterval(function(){
+			console.log('Interval');
+		}, 3000); // Now It will run after every 3 sec
+
+		
+
+		[
+			'javaScript',
+			'Client Work',
+			'Zeenayain Website'
+		].forEach((value, index)=>{
+
+			// skip any value
+			if(value === 'Client Work'){
+				return;
+			}
+			console.log(index);
+			console.log(value);
+		});
+		*/
+
+		/*----------------------------------------
+		        Advanced Function
+		 ----------------------------------------*/
+		/* const arrowFun = ()=>{
+			console.log('Arrow Function');
+		}
+
+		arrowFun();
+
+		// Shortcuts in arrow function
+		const onePram = pram=>{     //when use only 1 param don't need to add ()
+			console.log(pram + 1);
+		}
+		onePram(5);
+
+		// 1 line don't need curly Braces {} and value will consider as return
+		const oneLine = ()=> 2+5;   //like return 2+5;
+		console.log(oneLine());
+
+		// Use function in Object in easy way
+		const obj2 = {
+			method: ()=>{ //not preffered
+
+			},
+
+			method(){    //preffered
+
+			},
+		};
+		*/
+
+		/*
+		const jsBtn = document.querySelector('.js-btn');
+
+		const myEventListener = ()=>{
+			console.log('clicked!');
+		};
+
+		jsBtn.addEventListener('click', myEventListener);
+
+		jsBtn.removeEventListener('click', myEventListener);
+
+
+
+		jsBtn.addEventListener('click', ()=>{
+			console.log('clicked 2!');
+		});
+
+	*/
+
+		// .filter() in array
+		// --------------------------
+
+		[1, -3, 5].filter((value, index)=>{
+
+			return true;        // if return true it will save the value if false if not save the value
+		});
+
+
+		// We eant to filter just possitive numbers
+		console.log([2, -5, 3].filter((value, index)=>{
+			/*
+			if(value >= 0){
+				return true;
+			}else{
+				return false;
+			}
+			*/
+			return value >= 0;
+		}));
+
+		// .map in Array
+		// -------------------------
+		console.log([1,1,3].map((value, index)=>{
+
+			return value * 2;
+		}));
+
+		// Shortcuts
+		// don't need index yet so remove it and only I row so remove curly braces {} and return
+		console.log([1,1,3].map(value => value * 2));
+
+
+
+	</script>
+
+</body>
+</html>

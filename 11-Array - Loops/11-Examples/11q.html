@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>11q Exercise</title>
+</head>
+<body>
+
+	<script>
+
+		function findInd(array,word){
+		let index = -1;
+
+		for(let i = 0; i < array.length; i++){
+			if(array[i] === word){
+				index = i;
+				break;
+			}
+		}
+
+		return index;
+	}
+
+	console.log(findInd(['hello', 'word', 'search', 'good', 'search', 'search'], 'good'));
+	console.log(findInd(['not', 'found'], 'god'));
+	</script>
+
+</body>
+</html>

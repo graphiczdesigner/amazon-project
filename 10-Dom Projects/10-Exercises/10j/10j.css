@@ -1,0 +1,35 @@
+body{
+         background-color: #000;
+         font-family: Arial;
+      }
+
+      .displayCalculation{
+        color: #fff;
+        font-size: 45px;
+        margin: 15px 0 5px 0;
+        
+      }
+
+      .gray-btn{
+        background-color: #333;
+        color: #fff;
+      }
+
+      .orange-btn{
+        background-color: #fea00a;
+        color: #fff;
+      }
+
+      .btns{
+        font-size: 26px;
+        height: 60px;
+        width: 60px;
+        border: none;
+        border-radius: 50%;
+        margin-right: 8px;
+        cursor: pointer;
+      }
+
+      .clear-btn{
+        font-size: 17px;
+      }

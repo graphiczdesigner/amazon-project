@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM Projects</title>
+	<style>
+		body{
+			font-family: Arial;
+
+		}
+
+		.subscribe-button-css{
+			border: none;
+			background-color: black;
+			color: #fff;
+			padding: 10px 15px;
+			font-weight: bold;
+			border-radius: 50px;
+			cursor: pointer;
+			margin-bottom: 30px;
+		}
+
+		.is-subscribed{
+			background-color: #f0f0f0;
+			color: #000;
+		}
+
+		.cost-input{
+			font-size: 15px;
+			padding: 10px;
+		}
+		.calculate{
+			background-color: green;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			padding: 12px 15px;
+			font-size: 15px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<!-- 1st project -->
+	<p>YouTube Subscribe Button</p>
+	<button 
+	class="js-subscribe-btn subscribe-button-css" onclick="subscribe();"
+	>Subscribe</button>
+
+	<!-- 2nd project -->
+	<p>Amazon Shipping Calculator</p>
+	<p>Orders under $40 = +$10 shipping.</p>
+	<p>Orders over $40 = Free shipping.</p>
+	<input class="amount cost-input" type="number"
+	 placeholder="Cost of Product" 
+	 onkeydown="displayResultKeyDown(event);">
+	<button onclick="
+        calculateTax();
+
+	" class="calculate">Calculate</button>
+	<p class="totalAmount"></p>
+
+	<script>
+
+		function subscribe(){
+	        const subscribeBtn = document.querySelector('.js-subscribe-btn');
+
+                if(subscribeBtn.innerText === 'Subscribe'){
+                	   subscribeBtn.innerText = 'Subscribed';
+                	   subscribeBtn.classList.add('is-subscribed');
+                } else{
+                	subscribeBtn.innerText = 'Subscribe';
+                	subscribeBtn.classList.remove('is-subscribed');
+                }
+        }
+
+        // 2nd project
+
+        function calculateTax(){
+
+        let amount = document.querySelector('.amount');
+        let totalAmount = document.querySelector('.totalAmount');
+
+        let cost = Number(amount.value);
+
+        if(cost < 40){
+            cost += 10;
+        }
+
+        totalAmount.innerHTML = `$${cost}`;
+
+    }
+
+    function displayResultKeyDown(event){
+        if(event.key === 'Enter'){
+        	calculateTax();
+        }
+    } 
+
+
+		
+	</script>
+
+</body>
+</html>

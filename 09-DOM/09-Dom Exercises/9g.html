@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>9g Exercise</title>
+</head>
+<body>
+
+	<!-- 2nd project -->
+	<p>Amazon Shipping Calculator</p>
+	<p>Orders under $40 = +$10 shipping.</p>
+	<p>Orders over $40 = Free shipping.</p>
+	<input class="amount" type="number"
+	 placeholder="Cost of Product" 
+	 onkeydown="displayResultKeyDown(event);">
+	<button onclick="
+        calculateTax();
+
+	">Calculate</button>
+	<p class="totalAmount"></p>
+
+	<script>
+
+        // 2nd project
+
+        function calculateTax(){
+
+        let amount = document.querySelector('.amount');
+        let totalAmount = document.querySelector('.totalAmount');
+
+        let cost = Number(amount.value * 100);
+
+        if(cost < 4000){
+            cost += 1000;
+        }
+
+        totalAmount.innerHTML = `$${cost / 100}`;
+
+    }
+
+    function displayResultKeyDown(event){
+        if(event.key === 'Enter'){
+        	calculateTax();
+        }
+    } 
+
+
+		
+	</script>
+
+</body>
+</html>

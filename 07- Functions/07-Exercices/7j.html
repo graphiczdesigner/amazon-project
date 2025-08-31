@@ -1,0 +1,101 @@
+                    <!DOCTYPE html>
+                    <html>
+                      <head>
+                        <title>7j Exercise</title>
+                      </head>
+                      <body>
+                        <p>
+                          <button onclick="
+                            mathCalculation('1');
+                          ">1</button>
+
+                          <button onclick="
+                            mathCalculation('2');
+                          ">2</button>
+
+                          <button onclick="
+                            mathCalculation('3');
+                          ">3</button>
+
+                          <button onclick="
+                            mathCalculation('+');
+                          ">+</button>
+                        </p>
+
+                        <p>
+                          <button onclick="
+                            mathCalculation('4');
+                          ">4</button>
+
+                          <button onclick="
+                            mathCalculation('5');
+                          ">5</button>
+
+                          <button onclick="
+                            mathCalculation('6');
+                          ">6</button>
+
+                          <button onclick="
+                            mathCalculation('-');
+                          ">-</button>
+                        </p>
+
+                        <p>
+                          <button onclick="
+                            mathCalculation('7');
+                          ">7</button>
+
+                          <button onclick="
+                            mathCalculation('8');
+                          ">8</button>
+
+                          <button onclick="
+                            mathCalculation('9');
+                          ">9</button>
+
+                          <button onclick="
+                            mathCalculation('*');
+                          ">*</button>
+                        </p>
+
+                        <p>
+                          <button onclick="
+                            mathCalculation('0');
+                          ">0</button>
+
+                          <button onclick="
+                            mathCalculation('.');
+                          ">.</button>
+
+                          <button onclick="
+                            // Note: eval() takes a string and runs it as code.
+                            // Avoid using eval() in real world projects since
+                            // it can potentially be given harmful code to run.
+                            // Only use eval() for learning purposes.
+                            calculation = eval(calculation);
+                            console.log(calculation);
+                          ">=</button>
+
+                          <button onclick="
+                            mathCalculation('/');
+                          ">/</button>
+                        </p>
+
+                        <p>
+                          <button onclick="
+                            calculation = '';
+                            console.log('Cleared.');
+                          ">Clear</button>
+                        </p>
+
+                        <script>
+
+                          let calculation = '';
+
+                          function mathCalculation(getValue){
+                            calculation += getValue;
+                            console.log(calculation);
+                          }
+                        </script>
+                      </body>
+                    </html>

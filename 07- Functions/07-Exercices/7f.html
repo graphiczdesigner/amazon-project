@@ -1,0 +1,38 @@
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <title>7f Exercise</title>
+                    </head>
+                    <body>
+                        
+                        <script>
+
+                            function convertTemp(degree, unit){
+
+                                if(unit === 'C'){
+                                    let fahrenheit = (degree * 9 / 5 ) + 32;
+                                    return `${fahrenheit} °F`;
+                                }
+                                else if (unit === 'F'){
+                                    let celsius = (degree - 32) * 5 / 9;
+                                    return `${celsius} °C`;
+                                }
+                                else{
+                                    console.log('Invalid unit!');
+                                }
+
+
+                            }
+
+                            console.log(convertTemp(25, 'C'));
+                            console.log(convertTemp(86, 'F'));
+
+                           
+
+                        </script>
+
+                    </body>
+                    </html>
+

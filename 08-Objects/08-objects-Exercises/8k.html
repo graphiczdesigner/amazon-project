@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>8k Exercise</title>
+</head>
+<body>
+
+	<button onclick="playGame('heads');">heads</button>
+	<button onclick="playGame('tails');">tails</button>
+	<button onclick="resetScore();">Reset Score</button>
+
+
+	<script>
+
+		const score = JSON.parse(localStorage.getItem('score'))||{
+				wins: 0,
+				losses: 0
+			};
+
+		function playGame(guess){
+			let anyNum = Math.random();
+			let result = (anyNum < 0.5)? 'heads': 'tails';
+				(guess === result)? console.log('You Win!'): console.log('You lose!');
+				if(guess === result){
+					score.wins += 1;
+				}else{
+					score.losses+= 1;
+				}
+				localStorage.setItem('score', JSON.stringify(score));
+				console.log(score);
+			}
+
+			function resetScore(){
+				localStorage.removeItem('score');
+				score.wins = 0;
+				score.losses = 0;
+				console.log('Score Clear!');
+			}
+
+	</script>
+
+</body>
+</html>

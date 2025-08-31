@@ -1,0 +1,166 @@
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <title>Objects</title>
+                  </head>
+                  <body>
+                    
+
+                    <script>
+
+                      /*
+
+                      let product = {
+                        name: 'Couple watches',
+                        price: 2400,
+
+                        // if we want to add - in property we will write property in colon ''
+                        'delivery-time': '3 to 4 Days',
+
+                        // We can also use another object inside the object
+                        rating: {
+                          stars: 4.5,
+                          count: 85
+                        },
+
+                        // We can also use function inside the object
+                        finalPrice: function(){
+                          let taxProduct = this.price * 0.1;
+                          let deliveryCharges = 250;
+                          console.log(this.price + taxProduct + deliveryCharges);
+                        }
+
+
+
+                      };
+
+
+
+                      console.log(product);
+
+                      console.log(product.name);
+
+                      console.log(product.price);
+
+                      // we can also change object property value later
+
+                      product.price = 2500;
+
+                      console.log(`Updated Product Price: ${product.price}`);
+
+                      // We can add new property later
+
+                      product.color = 'black';
+                      console.log(product);
+
+                      // We can also delete any property later
+
+                      // delete product.price;
+                      // console.log(product);
+
+
+                      // Check type
+                      console.log(typeof product);
+
+
+                      // another way to access properties of object 
+
+                      console.log(product['color']);
+
+
+                      // (Why we use [] way? Because some time we can't access directly any property with . notation For Example:)
+
+                     product['watch-size'] = 32;
+
+
+                     // console.log(product.watch-size); It will show error because it consider - as minus sign.
+
+                     console.log(product['watch-size']);
+
+
+                     // Nested Object (Object inside the object)
+
+                     console.log(product.rating.stars);
+
+
+                     // Function inside Objects
+
+                     product.finalPrice();
+
+
+                     // Built in Object JSON
+                     // Convert javaScript Object to JSON (Use JSON.stringify(objectname))
+                     console.log(JSON.stringify(product));
+
+                     // Convert JSON to javaScript object (Use JSON.parse(JSON object name))
+
+                     const jsonString = JSON.stringify(product);
+
+                     console.log(JSON.parse(jsonString));
+
+                     */
+
+                      // Auto-boxing (Special object) Strings. Methods (use after dot .)
+
+                      console.log('zeeshan'.length);
+
+                      console.log('zeeshan'.toUpperCase());
+
+                      // References
+
+                      const object1 = {
+                        message: 'hello'
+                      };
+
+                      const object2 = object1;
+
+                      object1.message = 'Hello World!';
+
+                      console.log(object1);
+
+                      // ShortCuts in objects
+
+                      // 1st Destructuring shortcut
+
+                      const object4 = {
+                        message: 'Good Job!',
+                        price: 399
+                      };
+
+                      // save in a variable
+                      // const message = object4.message; (Now shortcut this)
+                      const { message, price } = object4;
+                      // message and price are variables
+
+                      console.log(`Message: ${message}\nPrice: ${price}`);
+
+                      //2nd Shorthand shortcut
+                      const object5 = {
+                        // message = message // = kay baad wala message veriable hai.
+                        // shortcut use just once
+                        message
+                      }
+                      
+                      console.log(object5.message);
+
+                      //3rd Shorthand method Shortcut
+
+                      // modern way of using function in objects
+
+                      const object6 ={
+                        // method: function function1(){
+                        //   console.log('Zeeshan Shahzad');
+                        // }
+
+                        method(){
+                          console.log('Zeeshan Shahzad')
+                        }
+                      };
+
+                      console.log(object6.method());
+
+
+                      
+                    </script>
+                  </body>
+                </html>

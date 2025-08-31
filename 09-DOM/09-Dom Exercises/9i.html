@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9i Exercise</title>
+  </head>
+  <body>
+    <button onclick="displayCartQt();">Show Quantity</button>
+
+    <button onclick="updateCartQt(1);">Add to Cart</button>
+
+    <button onclick="updateCartQt(2);">+2</button>
+
+    <button onclick="updateCartQt(3);">+3</button>
+
+    <button onclick="updateCartQt(4);">+4</button>
+
+    <button onclick="updateCartQt(5);">+5</button>
+
+    <button onclick="updateCartQt(-1);">Remove from cart</button>
+
+    <button onclick="updateCartQt(-2);">-2</button>
+
+    <button onclick="updateCartQt(-3);">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      displayCartQt();
+    ">Reset Cart</button>
+
+    <p class="displayResult"></p>
+
+    <script>
+      let cartQuantity = 0;
+
+      displayCartQt();
+
+      function updateCartQt(updateValue) {
+        if (cartQuantity + updateValue > 10) {
+          alert('The cart is full');
+          return;
+        }
+
+        if (cartQuantity + updateValue < 0) {
+          alert('Not enough items in the cart');
+          return;
+        } 
+
+        cartQuantity += updateValue;
+        displayCartQt();
+      }
+
+      function displayCartQt() {
+        let displayResult = document.querySelector('.displayResult');
+        displayResult.innerHTML = `Cart quantity: ${cartQuantity}`; 
+      }
+    </script>
+  </body>
+</html>

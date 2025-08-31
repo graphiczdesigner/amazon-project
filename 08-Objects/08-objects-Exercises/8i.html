@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>8i Exercise</title>
+</head>
+<body>
+
+	<button onclick="playGame('heads');">heads</button>
+	<button onclick="playGame('tails');">tails</button>
+
+
+	<script>
+			function playGame(guess){
+			  let anyNum = Math.random();
+			  let result = (anyNum < 0.5)? 'heads': 'tails';
+				 (guess === result)? console.log('You Win!'): console.log('You lose!');
+			}
+	
+	</script>
+
+</body>
+</html>
