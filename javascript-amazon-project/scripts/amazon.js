@@ -42,7 +42,8 @@ products.forEach((product)=>{
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-added-to-cart" 
+          data-addtocart-id="${product.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -61,14 +62,14 @@ innerHTML = productsHTML;
 // Add to cart button interactive
 document.querySelectorAll('.js-add-to-cart')
     .forEach((button)=>{
+      let timeoutID;
         button.addEventListener('click',()=>{
           
-            const productId = button.dataset.productId;
+            const {productId} = button.dataset;
             // Selected Quantity from dropdown
             let selectedQuantity = document.querySelector(
                   `.js-quantity-selector-${productId}`).value;
-                    console.log(selectedQuantity);
-                    let dropdownQuantity = Number(selectedQuantity);
+                    let quantity = Number(selectedQuantity);
             let matchingItem;
             // cart is variable name of an array from data/cart.js
             cart.forEach((items)=>{
@@ -78,12 +79,12 @@ document.querySelectorAll('.js-add-to-cart')
                 });
 
                 if(matchingItem){
-                    matchingItem.quantity += dropdownQuantity;
+                    matchingItem.quantity += quantity;
                 }
                 else{
                     cart.push({
                     productId,
-                    quantity: dropdownQuantity
+                    quantity
                     });
                 }
 
@@ -95,6 +96,16 @@ document.querySelectorAll('.js-add-to-cart')
             
             document.querySelector('.js-cart-quantity')
             .innerHTML = cartQuantity;
+
+            let addedMsg = document.querySelector
+            (`.js-added-to-cart[data-addtocart-id="${productId}"]`);
+
+            clearTimeout(timeoutID);
+            addedMsg.classList.add('added-visible');
+            timeoutID = setTimeout(()=>{
+                addedMsg.classList.remove('added-visible');
+            },2000);
+
         });
     });
 
