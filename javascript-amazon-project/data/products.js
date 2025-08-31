@@ -656,5 +656,20 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1-bc2847e9-5323-403f-b7cf-57fde044a955",
+    image: "images/products/backpack.jpg",
+    name: "Black Bag Stylish",
+    rating: {
+      stars: 3.5,
+      count: 7157
+    },
+    priceCents: 3200,
+    keywords: [
+      "bag",
+      "apparel",
+      "mens"
+    ]
   }
 ];
