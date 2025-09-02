@@ -1,3 +1,4 @@
+import {cart} from '../data/cart.js';
 // Add products in html using js
 let productsHTML = '';
 // products is a variable name oof an array from data/products.js
