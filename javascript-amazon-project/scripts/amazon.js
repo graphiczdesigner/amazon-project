@@ -1,4 +1,4 @@
-import {cart, addToCart, updateCartQuantity} from '../data/cart.js';
+import {cart, addToCart, updateCartQuantity, showAddedMessage} from '../data/cart.js';
 import {products} from '../data/products.js'
 import { formatCurrency } from './utils/money.js';
 
@@ -70,10 +70,12 @@ document.querySelectorAll('.js-add-to-cart')
         button.addEventListener('click',()=>{           
             const {productId} = button.dataset;            
             addToCart(productId);
-            updateCartQuantity(productId, timeoutID);
+            updateCartQuantity();
+            timeoutID = showAddedMessage(productId, timeoutID);
 
         });
     });
-
+// run function cart quantity on page load
+updateCartQuantity();
 
 
