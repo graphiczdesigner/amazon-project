@@ -70,7 +70,7 @@ document.querySelectorAll('.js-add-to-cart')
         button.addEventListener('click',()=>{           
             const {productId} = button.dataset;            
             addToCart(productId);
-            updateCartQuantity();
+            updateCartQuantity(productId, timeoutID);
 
         });
     });
