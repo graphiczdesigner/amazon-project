@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Challenge 9</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-heading">Bank Account</h1>
+    <div class="account-details">
+      <div>
+        <label class="name-label">Name:</label>
+        <span class="js-name"></span>
+      </div>
+      <div>
+        <label class="balance-label">Balance:</label>
+        <span class="js-balance">******</span>
+      </div>
+
+      <div class="deposit-container">
+        <input class="depost-input" type="number" placeholder="Enter amount">
+        <button class="deposit-btn">Deposit</button>
+      </div>
+
+      <div class="withdraw-container">
+        <input class="withdraw" type="number" placeholder="Enter amount">
+        <button class="withdraw-btn">Withdraw</button>
+      </div>
+
+      <div class="current-balance-container">
+        <button class="current-balance-btn">Check Balance</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bankAccount = {
+      ownerName: 'Zeeshan Shahzad',
+      balance: JSON.parse(localStorage.getItem("bankBalance")) || 0
+    };
+
+    // Show owner name on load
+    document.querySelector('.js-name').innerText = bankAccount.ownerName;
+
+    //Show Balance Function
+    function showBalanceOnPage(){
+          document.querySelector('.js-balance').innerText = getBalance();
+          currentBalance.innerText = 'Hide Balance';
+        }
+
+    // Hide Balance Function
+    function hideBalanceOnPage(){
+      document.querySelector('.js-balance').innerText = '******';
+      currentBalance.innerText = 'Check Balance';
+    }
+
+    function deposit(amount) {
+      bankAccount.balance += amount;
+      localStorage.setItem("bankBalance", JSON.stringify(bankAccount.balance));
+      return bankAccount.balance;
+    }
+
+    document.querySelector('.deposit-btn').addEventListener('click', () => {
+      let depositValue = Number(document.querySelector('.depost-input').value);
+      if (depositValue > 0) {
+        deposit(depositValue);
+        document.querySelector('.depost-input').value = "";
+        showBalanceOnPage();
+      }
+    });
+
+    function withdraw(amount) {
+      if (bankAccount.balance >= amount) {
+        bankAccount.balance -= amount;
+        localStorage.setItem("bankBalance", JSON.stringify(bankAccount.balance));
+        return bankAccount.balance;
+      } else {
+        alert(`Your Balance is less than ${amount}`);
+        return bankAccount.balance;
+      }
+    }
+
+    document.querySelector('.withdraw-btn').addEventListener('click', () => {
+      let withdrawValue = Number(document.querySelector('.withdraw').value);
+      if (withdrawValue > 0) {
+        withdraw(withdrawValue);
+        document.querySelector('.withdraw').value = "";
+        showBalanceOnPage();
+      }
+    });
+
+    function getBalance() {
+      return bankAccount.balance;
+    }
+
+    let currentBalance = document.querySelector('.current-balance-btn');
+    currentBalance.addEventListener('click', () => {
+      if(currentBalance.innerText === 'Check Balance'){
+        showBalanceOnPage();      
+      } else if(currentBalance.innerText === 'Hide Balance'){
+           hideBalanceOnPage(); 
+      }
+    });
+    
+    
+  </script>
+</body>
+</html>

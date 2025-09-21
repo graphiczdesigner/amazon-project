@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2</title>
+</head>
+<body>
+
+    <script>
+        let number = 0;
+        function findLargestNum(array){
+            array.forEach((index)=>{
+                if( index > number ){
+                    number = index;
+                }
+            });
+            return `Largest number is: ${number}`;
+        }
+        console.log(findLargestNum([2, 5, 7, 12, 16, 4, 6]));
+    </script>
+    
+</body>
+</html>

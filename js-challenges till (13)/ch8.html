@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 8</title>
+</head>
+<body>
+
+    <script>
+        const array = [1, 2, 3, 4, 2, 4, 7, 9, 1, 4];
+        function removeDublicates(){
+            const uniqueArray = [];
+            array.forEach((index)=>{
+                if(!uniqueArray.includes(index)){
+                    uniqueArray.push(index);
+                }
+            });
+            return uniqueArray;
+        }
+        console.log(removeDublicates());
+        
+    </script>
+    
+</body>
+</html>

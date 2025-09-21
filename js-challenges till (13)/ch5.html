@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 5</title>
+</head>
+<body>
+
+    <script>
+        let fruits = "apple orange apple banana orange apple";
+        function countItems(fruits){
+            let count = {};
+            count['apple'] = fruits.split('apple').length-1;
+            count['orange'] = fruits.split('orange').length-1;
+            count['banana'] = fruits.split('banana').length-1;
+            return count;
+        }
+        console.log(countItems(fruits));
+        
+    </script>
+    
+</body>
+</html>
