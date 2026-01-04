@@ -100,6 +100,6 @@ export function updateDeliveryOptions(productId, deliveryOptionId){
       matchingItem = items;
     }
   });
-  matchingItem.deliveryOptionId === deliveryOptionId;
+  matchingItem.deliveryOptionId = deliveryOptionId;
   saveToStorage();
 }
