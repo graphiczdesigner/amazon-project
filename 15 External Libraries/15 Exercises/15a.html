@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <title>5 Days After Day</title>
+</head>
+<body>
+    
+    <script>
+        let today = dayjs();
+        let futureDay = today.add(5, 'days');
+        let futureDayFormat = futureDay.format('MMMM D');
+        console.log(futureDayFormat);
+    </script>
+</body>
+</html>

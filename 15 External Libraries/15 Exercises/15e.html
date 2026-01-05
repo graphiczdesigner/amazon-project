@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <title>Weekend Find</title>
+</head>
+<body>
+    
+    <script>
+        
+        function isWeekEnd(date){
+            let anyDate = dayjs(date);
+            let day = anyDate.format('dddd');
+            if(day === "Saturday" || day === "Sunday"){
+                console.log(`Yes, ${day}! It's Weekend.`);
+            }else{
+                console.log(`${day}! No It's not weekend.`);
+            }
+        }
+        console.log(isWeekEnd('2026-10-20'));
+    </script>
+</body>
+</html>

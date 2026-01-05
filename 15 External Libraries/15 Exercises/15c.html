@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <title>1 Month Before today</title>
+</head>
+<body>
+    
+    <script>
+        let today = dayjs();
+        let previousMonth = today.subtract(1, 'month');
+        let previousMonthFormat = previousMonth.format('MMMM D');
+        console.log(previousMonthFormat);
+    </script>
+</body>
+</html>

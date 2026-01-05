@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+	<title>BirthDay CountDown</title>
+</head>
+<body>
+
+	<p class="js-countdown"></p>
+
+	<script>
+		// din, gante, minutes
+		function countDownTimer(birthdate){
+			let birthDate = dayjs(birthdate);
+			let today = dayjs();
+
+			const months = birthDate.diff(today, 'months');
+			const days = birthDate.diff(today, 'days');
+			const hours = birthDate.diff(today, 'hours') % 24;
+			const minutes = birthDate.diff(today, 'minutes') % 60;
+			const countdown = `${months} Months, ${days} Days, ${hours} Hours, ${minutes} Minutes`
+			return countdown;
+		}
+
+		console.log(countDownTimer('2026-10-20'));
+	</script>
+</body>
+</html>

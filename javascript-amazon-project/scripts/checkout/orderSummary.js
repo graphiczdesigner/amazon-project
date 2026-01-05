@@ -144,9 +144,7 @@ export function renderOrderSummary(){
             link.addEventListener('click', ()=>{
                 const productId = link.dataset.productId;
                 removeFromCart(productId);
-                const container = document.querySelector(
-                    `.cart-item-container-${productId}`);
-                    container.remove();
+                    renderOrderSummary();
                     updateQtOnCheckout();
                     renderPaymentsSummary();
             });

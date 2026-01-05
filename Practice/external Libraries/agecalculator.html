@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+	<title>Age Calculator</title>
+</head>
+<body>
+	<p class="js-age"></p>
+
+	<script>
+		
+		function calculateAge(birthday){
+			let birthDate = dayjs(birthday);
+			let now = dayjs();
+			let age = now.diff(birthDate, 'year');
+			return age;
+		}
+		console.log(calculateAge('2024-07-27'));
+
+
+		// Compare / Days Count how much left
+		const birthday = dayjs('2003-10-20');
+		let date = dayjs();
+		let daysLeft = date.diff(birthday, 'days');
+		console.log(`Zeeshan ${daysLeft} Days ka ho gya hai.`);
+
+	</script>
+</body>
+</html>
